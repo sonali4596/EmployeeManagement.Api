@@ -19,7 +19,8 @@ namespace EmployeeManagementInterface.Services
         }
         public async Task<MasterEmployee> GetEmployeeById(int id)
         {
-            return await _httpClient.GetFromJsonAsync<MasterEmployee>($"api/MasterEmployee/{id}");
+            var response = await _httpClient.GetFromJsonAsync<MasterEmployee>($"api/MasterEmployee/{id}");
+            return response;
         }
         public async Task<HttpResponseMessage> UpdateInfoEmployee(MasterEmployee employee)
         {
